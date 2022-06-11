@@ -16,5 +16,18 @@ export class CreateUserUseCase {
        }
         const user = new User(data)
         await this.usersRepository.save(user)
+
+        this.mailProvider.sendMail({
+            to: {
+                name: data.name,
+                email: data.email
+            },
+            from: {
+                name: 'Test',
+                email: 'test@noemail.com'
+            },
+            subject: 'Welcome to my platform',
+            body: `<p> click in this link to activate you account <a> venv-here </a> </p>`
+        })
     }
 }
