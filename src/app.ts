@@ -1,9 +1,21 @@
-import express from 'express'
+import 'reflect-metadata'
+import express from "express"
+import "./databases/typeorm/config"
+import cors from "cors"
+import { Express } from 'express-serve-static-core'
+import swaggerUi from 'swagger-ui-express'
+import swaggerDocs from './docs/swagger.json'
+
 import { router } from './routes'
+class MyApp {
+    app:Express;
+    constructor() {
+        this.app = express();
+        this.app.use(express.json());
+        this.app.use(cors());
+        // this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+        this.app.use(process.env.SULFIX_URL, router)
+    }
+}
 
-const app = express()
-
-app.use(express.json())
-app.use(router)
-
-export { app }
+export default new MyApp().app;
