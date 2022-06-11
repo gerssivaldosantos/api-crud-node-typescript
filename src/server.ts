@@ -1,3 +1,3 @@
-import { app } from "./app"
+import  app  from "./app"
 
-app.listen(8585, () => console.log('listen on 8085'))
+app.listen(process.env.PORT, () => console.log(`listen on port ${process.env.PORT}`))
