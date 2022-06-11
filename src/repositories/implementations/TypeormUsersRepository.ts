@@ -1,9 +1,13 @@
-import { Repository } from "typeorm";
+import { getRepository, Repository } from "typeorm";
 import { User } from "../../entities/User";
 import { UsersRepositoryInterface } from "../UsersRepositoryInterface";
 
 export class TypeormUsersRepository implements UsersRepositoryInterface {
-    constructor (private readonly usersRepository: Repository<User>){}
+    constructor (private readonly usersRepository?: Repository<User>){
+        if (!usersRepository) {
+            this.usersRepository = getRepository(User);
+        }
+    }
     save(user: User): Promise<void> {
         throw new Error("Method not implemented.");
     }
