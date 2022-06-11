@@ -1,20 +1,34 @@
 import { uuid } from "uuidv4";
+import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryColumn, BeforeInsert, BeforeUpdate, JoinColumn, OneToOne} from "typeorm"
+import { CreateUserRequestDTO } from "../useCases/CreateUser/CreateUserDTO";
 
+@Entity('users')
 export class User {
+    @PrimaryColumn()
     public readonly id: string;
+    @Column()
     public name: string;
+    @Column()
     public email: string;
+    @Column()
     public password: string;
-
+    @CreateDateColumn()
+    public createdAt: Date;
+    @UpdateDateColumn()
+    public updatedAt: Date;
     // This contructor will recive all properties but id (Omit<User, 'id'>)
     // After, id is declared manually be optional
-    constructor(props: Omit<User, 'id'>, id?: string){
+    constructor(props: CreateUserRequestDTO, id?: string){
         // The constructor will assign all properties passed by props to class
         // self instance, and verify if id was passed, if is false, a new id
         // will be generated
         Object.assign(this, props);
         if (!id) {
             this.id = uuid()
+            this.createdAt = new Date()
+            this.updatedAt = new Date()
+        } else {
+            this.updatedAt = new Date ()
         }
     }
 }
