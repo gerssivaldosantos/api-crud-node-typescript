@@ -1,10 +1,12 @@
 import { User } from "../../entities/User";
+import { MailProviderInterface } from "../../providers/MailProviderInterface";
 import { UsersRepositoryInterface } from "../../repositories/UsersRepositoryInterface";
 import { CreateUserRequestDTO } from "./CreateUserDTO";
 
 export class CreateUserUseCase {
     constructor(
-        private usersRepository: UsersRepositoryInterface
+        private usersRepository: UsersRepositoryInterface,
+        private mailProvider: MailProviderInterface
     ){}
     async execute (data: CreateUserRequestDTO) {
        const userSearched = await this.usersRepository.findByEmail(data.email)
