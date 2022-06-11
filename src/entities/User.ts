@@ -16,8 +16,7 @@ export class User {
     public createdAt: Date;
     @UpdateDateColumn()
     public updatedAt: Date;
-    // This contructor will recive all properties but id (Omit<User, 'id'>)
-    // After, id is declared manually be optional
+    
     constructor(props: CreateUserRequestDTO, id?: string){
         // The constructor will assign all properties passed by props to class
         // self instance, and verify if id was passed, if is false, a new id
