@@ -1,11 +1,13 @@
 import { MailProviderInterface, MessageInterface } from "../MailProviderInterface";
 import nodemailer from 'nodemailer'
+import { SentMessageInfo } from "nodemailer/lib/smtp-transport";
 
 export class MailtrapMailProvider implements MailProviderInterface {
-
+    
     constructor(
-        private transporter
+        private transporter?: nodemailer.Transporter<SentMessageInfo>
     ) {
+        if (!transporter) {
         this.transporter = nodemailer.createTransport({
             host: "smtp.mailtrap.io",
             port: 2525,
@@ -13,7 +15,7 @@ export class MailtrapMailProvider implements MailProviderInterface {
               user: "1a860d258c7554",
               pass: "afb5e7c2ea792f"
             }
-          })
+          })}
     }
 
     async sendMail(message: MessageInterface): Promise<void> {
