@@ -12,9 +12,9 @@ export class User {
     public email: string;
     @Column()
     public password: string;
-    @CreateDateColumn()
+    @CreateDateColumn({name: 'created_at'})
     public createdAt: Date;
-    @UpdateDateColumn()
+    @UpdateDateColumn({name: 'updated_at'})
     public updatedAt: Date;
     
     constructor(props: CreateUserRequestDTO, id?: string){
