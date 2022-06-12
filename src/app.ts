@@ -1,12 +1,13 @@
 import 'reflect-metadata'
 import express from "express"
-import "./databases/typeorm/config"
 import cors from "cors"
 import { Express } from 'express-serve-static-core'
 import swaggerUi from 'swagger-ui-express'
 import swaggerDocs from './docs/swagger.json'
-
 import { router } from './routes'
+import dotenv from 'dotenv';
+dotenv.config();
+
 class MyApp {
     app:Express;
     constructor() {
