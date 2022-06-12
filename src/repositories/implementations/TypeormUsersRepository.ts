@@ -1,11 +1,12 @@
-import { getRepository, Repository } from "typeorm";
+import {  Repository } from "typeorm";
+import { AppDataSource } from "../../databases/typeorm/data-source";
 import { User } from "../../entities/User";
 import { UsersRepositoryInterface } from "../UsersRepositoryInterface";
 
 export class TypeormUsersRepository implements UsersRepositoryInterface {
     constructor (private readonly usersRepository?: Repository<User>){
         if (!usersRepository) {
-            this.usersRepository = getRepository(User);
+            this.usersRepository = AppDataSource.getRepository(User);
         }
     }
     save(user: User): Promise<void> {
