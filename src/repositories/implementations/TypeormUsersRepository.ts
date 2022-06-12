@@ -9,22 +9,26 @@ export class TypeormUsersRepository implements UsersRepositoryInterface {
             this.usersRepository = AppDataSource.getRepository(User);
         }
     }
-    save(user: User): Promise<void> {
+    async save(user: User): Promise<void> {
+        try {
+            await this.usersRepository.save(user);
+        } catch (error) {
+            throw new Error(error.message || "Error saving user");
+        }
+    }
+    async findById(id: string): Promise<User> {
+        return this.usersRepository.findOne({where: {id}});
+    }
+    async findByEmail(email: string): Promise<User> {
+        return this.usersRepository.findOne({where: {email}});
+    }
+    async findAll(): Promise<User[]> {
         throw new Error("Method not implemented.");
     }
-    findById(id: string): Promise<User> {
+    async update(user: User): Promise<User> {
         throw new Error("Method not implemented.");
     }
-    findByEmail(email: string): Promise<User> {
-        throw new Error("Method not implemented.");
-    }
-    findAll(): Promise<User[]> {
-        throw new Error("Method not implemented.");
-    }
-    update(user: User): Promise<User> {
-        throw new Error("Method not implemented.");
-    }
-    delete(id: string): Promise<void> {
+    async  delete(id: string): Promise<void> {
         throw new Error("Method not implemented.");
     }
 }
