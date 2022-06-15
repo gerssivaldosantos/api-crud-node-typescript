@@ -1,26 +1,26 @@
 import {  Repository } from "typeorm";
 import { AppDataSource } from "../../databases/typeorm/data-source";
 import { User } from "../../entities/User";
-import { UsersRepositoryInterface } from "../UsersRepositoryInterface";
+import { UserRepositoryInterface } from "../UserRepositoryInterface";
 
-export class TypeormUsersRepository implements UsersRepositoryInterface {
-    constructor (private readonly usersRepository?: Repository<User>){
-        if (!usersRepository) {
-            this.usersRepository = AppDataSource.getRepository(User);
+export class TypeormUserRepository implements UserRepositoryInterface {
+    constructor (private readonly userRepository?: Repository<User>){
+        if (!userRepository) {
+            this.userRepository = AppDataSource.getRepository(User);
         }
     }
     async save(user: User): Promise<void> {
         try {
-            await this.usersRepository.save(user);
+            await this.userRepository.save(user);
         } catch (error) {
             throw new Error(error.message || "Error saving user");
         }
     }
     async findById(id: string): Promise<User> {
-        return this.usersRepository.findOne({where: {id}});
+        return this.userRepository.findOne({where: {id}});
     }
     async findByEmail(email: string): Promise<User> {
-        return this.usersRepository.findOne({where: {email}});
+        return this.userRepository.findOne({where: {email}});
     }
     async findAll(): Promise<User[]> {
         throw new Error("Method not implemented.");

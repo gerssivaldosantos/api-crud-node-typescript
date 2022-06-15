@@ -1,13 +1,13 @@
 import { GetUserDTO } from "../../generic/dtos/GetUserDTO";
-import { UsersRepositoryInterface } from "../../repositories/UsersRepositoryInterface";
+import { UserRepositoryInterface } from "../../repositories/UserRepositoryInterface";
 
 
 export class GetUserByEmailUseCase {
-    constructor(private readonly usersRepository: UsersRepositoryInterface) {}
+    constructor(private readonly userRepository: UserRepositoryInterface) {}
 
     public async execute(email: string): Promise<GetUserDTO> {
         try {
-            return this.usersRepository.findByEmail(email);
+            return this.userRepository.findByEmail(email);
 
         }
         catch (error) {

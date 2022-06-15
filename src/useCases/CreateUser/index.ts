@@ -1,13 +1,13 @@
 import { MailtrapMailProvider } from "../../providers/implementations/MailtrapMailProvider";
-import { TypeormUsersRepository } from "../../repositories/implementations/TypeormUsersRepository";
+import { TypeormUserRepository } from "../../repositories/implementations/TypeormUserRepository";
 import { CreateUserController } from "./CreateUserController";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
 const mailtrapMailProvider = new MailtrapMailProvider()
-const typeormUsersRepository = new TypeormUsersRepository()
+const typeormUserRepository = new TypeormUserRepository()
 
 const createUserUseCase = new CreateUserUseCase(
-    typeormUsersRepository,
+    typeormUserRepository,
     mailtrapMailProvider,
 )
 
