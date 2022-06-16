@@ -34,6 +34,10 @@ export class TypeormUserRepository implements UserRepositoryInterface {
 
     }
     async  delete(id: string): Promise<void> {
-        throw new Error("Method not implemented.");
+        const userSearched = await this.userRepository.findOne({where: {id}});
+        if (!userSearched) {
+            throw new Error("User not found");
+        }
+        await this.userRepository.delete(id);
     }
 }
