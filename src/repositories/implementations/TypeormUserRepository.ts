@@ -42,4 +42,4 @@ class TypeormUserRepository implements UserRepositoryInterface {
     }
 }
 
-export default new TypeormUserRepository();
+export { TypeormUserRepository };

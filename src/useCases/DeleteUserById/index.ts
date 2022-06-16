@@ -1,8 +1,10 @@
-import TypeormUserRepository from "../../repositories/implementations/TypeormUserRepository";
+import { TypeormUserRepository } from "../../repositories/implementations/TypeormUserRepository";
 import { DeleteUserController } from "./DeleteUserController";
 import { DeleteUserUseCase } from "./DeleteUserUseCase";
 
-const deleteUserUseCase = new DeleteUserUseCase(TypeormUserRepository);
+const typeormUserRepository = new TypeormUserRepository()
+
+const deleteUserUseCase = new DeleteUserUseCase(typeormUserRepository);
 
 const deleteUserController = new DeleteUserController(deleteUserUseCase);
 
