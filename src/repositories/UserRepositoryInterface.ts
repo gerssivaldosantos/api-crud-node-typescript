@@ -5,6 +5,6 @@ export interface UserRepositoryInterface {
     findById(id: string): Promise<User | undefined>;
     findByEmail(email: string): Promise<User | undefined>;
     findAll(): Promise<User[]>;
-    update(user: User): Promise<User>;
+    update(user: User): Promise<void>;
     delete(id: string): Promise<void>;
 }
