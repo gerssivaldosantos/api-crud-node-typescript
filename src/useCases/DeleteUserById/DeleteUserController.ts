@@ -8,6 +8,14 @@ export class DeleteUserController {
     ) {}
 
     public async handler(request: Request, response: Response): Promise<void> {
-        await this.deleteUserUseCase.execute(request.params.id);
+        try{
+            if (!request.params.id) {
+                response.status(400).send('Missing id');
+            }
+            await this.deleteUserUseCase.execute(request.params.id);
+        } catch(error){
+            response.status(400).send(error.message);
+        }
+
     }
 }
