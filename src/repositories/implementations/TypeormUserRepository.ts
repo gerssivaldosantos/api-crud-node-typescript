@@ -3,7 +3,7 @@ import { AppDataSource } from "../../databases/typeorm/data-source";
 import { User } from "../../entities/User";
 import { UserRepositoryInterface } from "../UserRepositoryInterface";
 
-export class TypeormUserRepository implements UserRepositoryInterface {
+class TypeormUserRepository implements UserRepositoryInterface {
     constructor (private readonly userRepository?: Repository<User>){
         if (!userRepository) {
             this.userRepository = AppDataSource.getRepository(User);
@@ -41,3 +41,5 @@ export class TypeormUserRepository implements UserRepositoryInterface {
         await this.userRepository.delete(id);
     }
 }
+
+export default new TypeormUserRepository();
