@@ -25,8 +25,13 @@ export class TypeormUserRepository implements UserRepositoryInterface {
     async findAll(): Promise<User[]> {
         throw new Error("Method not implemented.");
     }
-    async update(user: User): Promise<User> {
-        throw new Error("Method not implemented.");
+    async update(user: User): Promise<void> {
+        const userSearched = await this.userRepository.findOne({where: {id: user.id}});
+        if (!userSearched) {
+            throw new Error("User not found");
+        }
+        await this.userRepository.update(user.id, user);
+
     }
     async  delete(id: string): Promise<void> {
         throw new Error("Method not implemented.");
