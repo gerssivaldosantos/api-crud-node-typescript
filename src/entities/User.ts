@@ -1,6 +1,5 @@
 import {v4 as uuid} from 'uuid';
 import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryColumn, BeforeInsert, BeforeUpdate, JoinColumn, OneToOne} from "typeorm"
-import { CreateUserRequestDTO } from "../useCases/CreateUser/CreateUserDTO";
 
 @Entity('users')
 export class User {
@@ -17,7 +16,7 @@ export class User {
     @UpdateDateColumn({name: 'updated_at'})
     public updatedAt: Date;
     
-    constructor(props: CreateUserRequestDTO, id?: string){
+    constructor(props: Omit<User, 'id'>, id?: string){
         // The constructor will assign all properties passed by props to class
         // self instance, and verify if id was passed, if is false, a new id
         // will be generated
