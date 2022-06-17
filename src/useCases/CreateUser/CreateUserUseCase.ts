@@ -1,6 +1,7 @@
 import { User } from "../../entities/User";
 import { MailProviderInterface } from "../../providers/MailProviderInterface";
 import { UserRepositoryInterface } from "../../repositories/UserRepositoryInterface";
+import bcrypt from 'bcryptjs'
 
 export class CreateUserUseCase {
     constructor(
@@ -13,6 +14,7 @@ export class CreateUserUseCase {
        if (userSearched){
            throw new Error("User already exists")
        }
+        data.password = await bcrypt.hash(data.password, 8)
         const user = new User(data)
         await this.userRepository.save(user)
 
