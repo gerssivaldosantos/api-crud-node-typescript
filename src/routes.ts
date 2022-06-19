@@ -13,11 +13,11 @@ router.post('/user', (request, response) => {
     return createUserController.handle(request, response)
 })
 
-router.get('/user', (request, response) => {
-    return getUserByEmailController.handle(request, response)
-})
+/* router.get('/user', (request, response) => {
+    return getUser.handle(request, response)
+}) */
 
-router.get('/user-by-email/:email', (request, response) => {
+router.get('/user-by-email', (request, response) => {
     return getUserByEmailController.handle(request, response)
 })
 
