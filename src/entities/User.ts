@@ -5,7 +5,7 @@ import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryColumn, Befo
 @Entity('users')
 export class User {
     @PrimaryColumn()
-    public readonly id: string;
+    public readonly id?: string;
     @Column()
     public name: string;
     @Column()
@@ -13,9 +13,9 @@ export class User {
     @Column()
     public password: string;
     @CreateDateColumn({name: 'created_at'})
-    public createdAt: Date;
+    public createdAt?: Date;
     @UpdateDateColumn({name: 'updated_at'})
-    public updatedAt: Date;
+    public updatedAt?: Date;
     
     constructor(props: Omit<User, 'id'>, id?: string){
         // The constructor will assign all properties passed by props to class
