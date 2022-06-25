@@ -3,6 +3,7 @@ import { createUserController } from "./useCases/CreateUser"
 import { deleteUserController } from "./useCases/DeleteUserById"
 import { getUserController } from "./useCases/GetUser"
 import { getUserByEmailController } from "./useCases/GetUserByEmail"
+import { getUserByIdController } from "./useCases/GetUserById"
 import { loginController } from "./useCases/Login"
 import { updateUserController } from "./useCases/UpdateUser"
 
@@ -20,6 +21,10 @@ router.get('/user', (request, response) => {
 
 router.get('/user-by-email', (request, response) => {
     return getUserByEmailController.handle(request, response)
+})
+
+router.get('/user/:id', (request, response) => {
+    return getUserByIdController.handle(request, response)
 })
 
 router.put('/user/:id', (request, response) => {
