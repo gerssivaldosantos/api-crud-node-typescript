@@ -3,15 +3,15 @@ import  { TypeormUserRepository } from "../../repositories/implementations/Typeo
 import { CreateUserController } from "./CreateUserController";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
-const mailtrapMailProvider = new MailtrapMailProvider()
+const mailProvider = new MailtrapMailProvider()
 
-const typeormUserRepository = new TypeormUserRepository()
+const repository = new TypeormUserRepository()
 
 const createUserUseCase = new CreateUserUseCase(
-    typeormUserRepository,
-    mailtrapMailProvider,
+    repository,
+    mailProvider,
 )
 
 const createUserController = new CreateUserController(createUserUseCase)
 
-export { createUserController }
+export { createUserController, createUserUseCase }

@@ -2,9 +2,9 @@ import { TypeormUserRepository } from "../../repositories/implementations/Typeor
 import { DeleteUserController } from "./DeleteUserController";
 import { DeleteUserUseCase } from "./DeleteUserUseCase";
 
-const typeormUserRepository = new TypeormUserRepository()
+const repository = new TypeormUserRepository()
 
-const deleteUserUseCase = new DeleteUserUseCase(typeormUserRepository);
+const deleteUserUseCase = new DeleteUserUseCase(repository);
 
 const deleteUserController = new DeleteUserController(deleteUserUseCase);
 

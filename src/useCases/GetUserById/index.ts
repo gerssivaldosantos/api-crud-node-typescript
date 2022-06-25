@@ -2,9 +2,9 @@ import { TypeormUserRepository } from "../../repositories/implementations/Typeor
 import { GetUserByIdController } from "./GetUserByIdController";
 import { GetUserByIdUseCase } from "./GetUserByIdUseCase";
 
-const userRepository = new TypeormUserRepository()
+const repository = new TypeormUserRepository()
 
-const getUserByIdUseCase = new GetUserByIdUseCase(userRepository)
+const getUserByIdUseCase = new GetUserByIdUseCase(repository)
 
 const getUserByIdController = new GetUserByIdController(getUserByIdUseCase)
 

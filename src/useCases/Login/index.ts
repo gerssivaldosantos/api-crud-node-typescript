@@ -5,9 +5,9 @@ import { LoginUseCase } from "./LoginUseCase";
 
 const tokenProvider = new JwtTokenProvider()
 
-const userRepository = new TypeormUserRepository()
+const repository = new TypeormUserRepository()
 
-const loginUseCase = new LoginUseCase(userRepository, tokenProvider)
+const loginUseCase = new LoginUseCase(repository, tokenProvider)
 
 const loginController = new LoginController(loginUseCase)
 

@@ -2,9 +2,9 @@ import { TypeormUserRepository }  from "../../repositories/implementations/Typeo
 import { GetUserController } from "./GetUserController";
 import { GetUserUseCase } from "./GetUserUseCase";
 
-const typeormUserRepository = new TypeormUserRepository()
+const repository = new TypeormUserRepository()
 
-const getUserUseCase = new GetUserUseCase( typeormUserRepository )
+const getUserUseCase = new GetUserUseCase( repository )
 
 const getUserController = new GetUserController( getUserUseCase )
 

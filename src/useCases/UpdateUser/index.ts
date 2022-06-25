@@ -2,9 +2,9 @@ import { TypeormUserRepository } from "../../repositories/implementations/Typeor
 import { UpdateUserController } from "./UpdateUserController";
 import { UpdateUserUseCase } from "./UpdateUserUseCase";
 
-const typeormUserRepository = new TypeormUserRepository()
+const repository = new TypeormUserRepository()
 
-const updateByEmailUseCase = new UpdateUserUseCase(typeormUserRepository)
+const updateByEmailUseCase = new UpdateUserUseCase(repository)
 
 const updateUserController = new UpdateUserController(updateByEmailUseCase)
 

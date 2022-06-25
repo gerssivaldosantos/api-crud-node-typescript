@@ -2,10 +2,10 @@ import { TypeormUserRepository } from "../../repositories/implementations/Typeor
 import { GetUserByEmailController } from "./GetUserByEmailController"
 import { GetUserByEmailUseCase } from "./GetUserByEmailUseCase"
 
-const typeormUserRepository = new TypeormUserRepository()
+const repository = new TypeormUserRepository()
 
 const getUserByEmailUseCase = new GetUserByEmailUseCase(
-    typeormUserRepository
+    repository
 )
 
 const getUserByEmailController = new GetUserByEmailController(getUserByEmailUseCase)
