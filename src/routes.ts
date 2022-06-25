@@ -22,7 +22,7 @@ router.get('/user-by-email', (request, response) => {
     return getUserByEmailController.handle(request, response)
 })
 
-router.put('/user/:email', (request, response) => {
+router.put('/user/:id', (request, response) => {
     return updateUserController.handle(request, response)
 })
 
