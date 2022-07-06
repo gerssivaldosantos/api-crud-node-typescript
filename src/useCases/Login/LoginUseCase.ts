@@ -12,7 +12,7 @@ export class LoginUseCase {
 
     public async execute(login: LoginDTO) {
         try {
-            const userSearched = await this.UserRepository.findByEmail(login.email)
+            const userSearched = await this.UserRepository.customFindByEmail(login.email)
             const passwordValid = await bcrypt.compare(login.password, userSearched.password)
             if (!passwordValid) {
                 throw new Error('Invalid credentials')

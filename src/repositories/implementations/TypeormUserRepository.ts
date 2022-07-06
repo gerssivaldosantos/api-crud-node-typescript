@@ -22,6 +22,17 @@ class TypeormUserRepository implements UserRepositoryInterface {
     async findByEmail(email: string): Promise<User> {
         return this.userRepository.findOne({where: {email}});
     }
+
+    async customFindByEmail(email: string): Promise<User> {
+        const user = await this.userRepository.
+        createQueryBuilder('user').
+        select().
+        addSelect("user.password").
+        where("user.email = :email", { email }).
+        getOne();
+        return user;
+    }
+    
     async findAll(): Promise<User[]> {
         throw new Error("Method not implemented.");
     }
