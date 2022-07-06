@@ -10,7 +10,7 @@ export class User {
     public name: string;
     @Column()
     public email: string;
-    @Column()
+    @Column({select: false})
     public password: string;
     @CreateDateColumn({name: 'created_at'})
     public createdAt?: Date;
