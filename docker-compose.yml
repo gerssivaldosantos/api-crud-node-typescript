@@ -1,0 +1,27 @@
+version: '3.6'
+services:
+  api:
+    build: .
+    command: yarn dev
+    volumes:
+        - .:/usr/app/
+        - /usr/app/node_modules
+    environment:
+        NODE_ENV: "development"
+        CLEARDB_DATABASE_URL: postgres:andows@postgres:5432
+        PORT: 3000
+        LOGGER_LEVEL: debug
+    ports:
+        - "3000:3000"
+    depends_on:
+        - postgres_api_container
+        
+  postgres:
+    container_name: postgres_api_container
+    restart: always
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: andows
+      POSTGRES_DB: api
