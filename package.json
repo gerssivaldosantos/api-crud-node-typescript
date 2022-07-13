@@ -9,6 +9,7 @@
     "dev:debug": "ts-node-dev --files --transpile-only --respawn --inspect=4321 --project tsconfig.json src/server.ts",
     "dev": "ts-node-dev --files --transpile-only --respawn --project tsconfig.json src/server.ts",
     "typeorm": "ts-node-dev node_modules/.bin/typeorm",
+    "migration:run": "ts-node-dev node_modules/.bin/typeorm migration:run -d src/databases/typeorm/data-source.ts",
     "test": "jest"
   },
   "devDependencies": {
