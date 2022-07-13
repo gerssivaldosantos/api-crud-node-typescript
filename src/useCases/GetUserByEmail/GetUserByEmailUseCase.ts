@@ -7,8 +7,8 @@ export class GetUserByEmailUseCase {
 
     public async execute(email: string): Promise<GetUserDTO> {
         try {
-            return this.userRepository.findByEmail(email);
-
+            const user = await this.userRepository.findByEmail(email) as GetUserDTO;
+            return user;
         }
         catch (error) {
             throw new Error("User not found");
