@@ -1,11 +1,9 @@
-import { TypeormUserRepository }  from "../../repositories/implementations/TypeormUserRepository";
+import { globalRepository } from "..";
 import { GetUserController } from "./GetUserController";
 import { GetUserUseCase } from "./GetUserUseCase";
 
-const repository = new TypeormUserRepository()
+const getUserUseCase = new GetUserUseCase(globalRepository)
 
-const getUserUseCase = new GetUserUseCase( repository )
-
-const getUserController = new GetUserController( getUserUseCase )
+const getUserController = new GetUserController(getUserUseCase)
 
 export { getUserController }
