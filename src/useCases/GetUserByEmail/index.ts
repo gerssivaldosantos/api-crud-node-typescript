@@ -1,5 +1,5 @@
 import { PostgresUserRepository } from "../../repositories/implementations/PostgresUserRepository"
-import { TypeormUserRepository } from "../../repositories/implementations/TypeormUserRepository"
+// import { TypeormUserRepository } from "../../repositories/implementations/TypeormUserRepository"
 import { GetUserByEmailController } from "./GetUserByEmailController"
 import { GetUserByEmailUseCase } from "./GetUserByEmailUseCase"
 
