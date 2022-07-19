@@ -8,7 +8,11 @@ services:
         - /usr/app/node_modules
     environment:
         NODE_ENV: "development"
-        CLEARDB_DATABASE_URL: postgres:andows@postgres:5432
+        DB_HOST: postgres
+        DB_PORT: 5432
+        DB_USER: mydb
+        DB_PASSWORD: andows
+        DB_NAME: api
         PORT: 3000
         LOGGER_LEVEL: debug
     ports:
@@ -23,5 +27,6 @@ services:
     ports:
       - 5432:5432
     environment:
+      POSTGRES_USER: mydb
       POSTGRES_PASSWORD: andows
       POSTGRES_DB: api
