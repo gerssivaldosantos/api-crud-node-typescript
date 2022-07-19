@@ -1,3 +1,5 @@
 import  app  from "./app"
-
-app.listen(process.env.PORT, () => console.log(`listen on port ${process.env.PORT}`))
+import { AppDataSource } from "./databases/typeorm/data-source"
+AppDataSource.initialize().then( () => {
+    app.listen(process.env.PORT, () => console.log(`listen on port ${process.env.PORT}`))
+} )
