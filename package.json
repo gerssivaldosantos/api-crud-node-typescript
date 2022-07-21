@@ -10,7 +10,7 @@
     "dev": "ts-node-dev --files --transpile-only --respawn --project tsconfig.json src/server.ts",
     "typeorm": "ts-node-dev node_modules/.bin/typeorm",
     "migration:run": "ts-node-dev node_modules/.bin/typeorm migration:run -d src/databases/typeorm/data-source.ts",
-    "test": "jest"
+    "test": "jest --forceExit"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.3.0",
