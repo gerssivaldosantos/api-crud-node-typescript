@@ -13,7 +13,7 @@ export class GetUserByEmailController {
         try {
             const user = await this.getUserByEmailUseCase.execute(email)
 
-            return response.json(user)
+            return response.status(200).json(user)
         } catch (error) {
             return response.status(400).json({
                 error: error.message || 'Unexpected error'

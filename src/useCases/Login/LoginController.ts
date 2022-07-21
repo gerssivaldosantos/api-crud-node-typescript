@@ -9,7 +9,7 @@ export class LoginController {
     async handle(request: Request, response: Response) {
         try {
             const token = await this.LoginUseCase.execute(request.body as LoginDTO)
-            return response.status(201).json({
+            return response.status(202).json({
                 token: token
             })
         } catch (error) {
