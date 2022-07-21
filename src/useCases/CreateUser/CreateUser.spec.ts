@@ -15,7 +15,7 @@ describe("CreateUserUseCase", () => {
             name: faker.name.firstName(),
             email: faker.internet.email(),
             password: "123456",
-        } as User;
+        };
         const userResponse = await request(app).post("/user").send(user)
         const { statusCode, body } = userResponse;
         expect(statusCode).toEqual(201)
