@@ -16,11 +16,14 @@ describe("CreateUserUseCase", () => {
             email: faker.internet.email(),
             password: "123456",
         } as User;
-        expect(await request(app).post("/user").send(user)).toHaveProperty("status", 201);
+        const userResponse = await request(app).post("/user").send(user)
+        const { statusCode, body } = userResponse;
+        expect(statusCode).toEqual(201)
+        expect(body).toHaveProperty('message')
+        expect(body.message).toEqual('User Created')
     });
 });
 
 afterAll( done => {
-    AppDataSource.destroy();
-    done()
+    AppDataSource.destroy().then(() => done());
 });
