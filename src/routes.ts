@@ -1,11 +1,11 @@
 import { Router } from "express"
-import { createUserController } from "./useCases/CreateUser"
-import { deleteUserController } from "./useCases/DeleteUserById"
-import { getUserController } from "./useCases/GetUser"
-import { getUserByEmailController } from "./useCases/GetUserByEmail"
-import { getUserByIdController } from "./useCases/GetUserById"
-import { loginController } from "./useCases/Login"
-import { updateUserController } from "./useCases/UpdateUser"
+import { loginController } from "./useCases/user/Login/login.module"
+import { createUserController } from "./useCases/user/CreateUser/create-user.module"
+import { deleteUserController } from "./useCases/user/DeleteUserById/delete-user-by-id.module"
+import { getUserController } from "./useCases/user/GetUser/get-user.module"
+import { getUserByEmailController } from "./useCases/user/GetUserByEmail/get-user-by-email.module"
+import { getUserByIdController } from "./useCases/user/GetUserById/get-user-by-id.module"
+import { updateUserController } from "./useCases/user/UpdateUser/update-user-by-id.module"
 
 const router = Router()
 
