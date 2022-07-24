@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreatePerfilService } from "./create-perfil.service";
+import { CreatePerfilService } from "./create-profile.service";
 
 export class CreatePerfilController {
     constructor(
