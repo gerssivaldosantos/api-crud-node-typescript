@@ -1,8 +1,8 @@
 import { profileRepository } from "../profile.repository";
-import { CreatePerfilController } from "./create-profile.controller";
-import { CreatePerfilService } from "./create-profile.service";
+import { CreateProfileController } from "./create-profile.controller";
+import { CreateProfileService } from "./create-profile.service";
 
-const createPerfilService = new CreatePerfilService(profileRepository);
-const createPerfilController = new CreatePerfilController(createPerfilService);
+const createProfileService = new CreateProfileService(profileRepository);
+const createProfileController = new CreateProfileController(createProfileService);
 
-export { createPerfilController };
+export { createProfileController };

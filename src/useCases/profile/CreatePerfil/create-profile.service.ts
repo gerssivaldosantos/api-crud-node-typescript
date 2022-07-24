@@ -1,11 +1,11 @@
-import { Perfil } from '../../../entities/Profile'
+import { Profile } from '../../../entities/Profile'
 
-export class CreatePerfilService {
+export class CreateProfileService {
     constructor(
-        private readonly profileRepository: profileRepositoryInterface
+        private readonly profileRepository: ProfileRepositoryInterface
     ) {}
 
-    async execute(profile: Perfil): Promise<Perfil> {
+    async execute(profile: Profile): Promise<Profile> {
         return this.profileRepository.create(profile);
     }
 }

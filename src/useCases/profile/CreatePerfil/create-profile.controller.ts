@@ -1,15 +1,16 @@
 import { Request, Response } from "express";
-import { CreatePerfilService } from "./create-profile.service";
+import { Profile } from "../../../entities/Profile";
+import { CreateProfileService } from "./create-profile.service";
 
-export class CreatePerfilController {
+export class CreateProfileController {
     constructor(
-        private readonly createPerfilService: CreatePerfilService
+        private readonly createProfileService: CreateProfileService
     ) {}
 
     async handle(request: Request, response: Response) {
         try {
-            await this.createPerfilService.execute(request.body as Perfil)
-            return response.status(201).json({ message: "Perfil Created" })
+            await this.createProfileService.execute(request.body as Profile)
+            return response.status(201).json({ message: "Profile Created" })
         } catch (error) {
             return response.status(400).json({
                 error: error.message || 'Unexpected error'
