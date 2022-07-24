@@ -10,7 +10,9 @@
     "dev": "ts-node-dev --files --transpile-only --respawn --project tsconfig.json src/server.ts",
     "typeorm": "ts-node-dev node_modules/.bin/typeorm",
     "migration:run": "ts-node-dev node_modules/.bin/typeorm migration:run -d src/databases/typeorm/data-source.ts",
-    "test": "jest --forceExit"
+    "test": "jest --forceExit",
+    "seed:config": "ts-node ./node_modules/typeorm-seeding/dist/cli.js config",
+    "seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.3.0",
@@ -19,6 +21,7 @@
     "@types/express": "^4.17.13",
     "@types/jest": "^28.1.3",
     "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "^18.0.6",
     "@types/pg": "^8.6.5",
     "@types/supertest": "^2.0.12",
     "@types/swagger-ui-express": "^4.1.3",
