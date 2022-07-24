@@ -1,7 +1,7 @@
 import {  Repository } from "typeorm";
-import { AppDataSource } from "../../databases/typeorm/data-source";
-import { User } from "../../entities/User";
-import { UserRepositoryInterface } from "../UserRepositoryInterface";
+import { AppDataSource } from "../../../databases/typeorm/data-source";
+import { User } from "../../../entities/User";
+import { UserRepositoryInterface } from "../../UserRepositoryInterface";
 
 class TypeormUserRepository implements UserRepositoryInterface {
     constructor (private readonly userRepository?: Repository<User>){
