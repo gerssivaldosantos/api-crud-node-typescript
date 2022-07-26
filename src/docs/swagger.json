@@ -26,19 +26,19 @@
         }
     ],
     "paths": {
-        "/users": {
+        "/user": {
             "get": {
                 "tags": [
-                    "users"
+                    "user"
                 ],
                 "security": [
                     {
                         "bearerAuth": []
                     }
                 ],
-                "summary": "Get all users",
-                "description": "Get all users",
-                "operationId": "getUsers",
+                "summary": "Get all user",
+                "description": "Get all user",
+                "operationId": "getUser",
                 "produces": [
                     "application/json"
                 ],
@@ -46,7 +46,7 @@
                     "200": {
                         "description": "successful operation",
                         "schema": {
-                            "$ref": "#/components/schemas/Users"
+                            "$ref": "#/components/schemas/User"
                         }
                     },
                     "400": {
@@ -61,7 +61,7 @@
                 "summary": "Create a user",
                 "description": "This route can create a user",
                 "tags": [
-                    "users"
+                    "user"
                 ],
                 "requestBody": {
                     "content": {
@@ -82,7 +82,7 @@
                 }
             }
         },
-        "/users/{id}": {
+        "/user/{id}": {
             "get": {
                 "parameters": [
                     {
@@ -100,7 +100,7 @@
                 "summary": "Update a user",
                 "description": "This route can update a user",
                 "tags": [
-                    "users"
+                    "user"
                 ],
                 "responses": {
                     "200": {
@@ -134,7 +134,7 @@
                 "summary": "Update a user",
                 "description": "This route can update a user",
                 "tags": [
-                    "users"
+                    "user"
                 ],
                 "requestBody": {
                     "content": {
@@ -534,7 +534,7 @@
                     }
                 }
             },
-            "Users": {
+            "User": {
                 "type": "array",
                 "items": {
                     "$ref": "#/components/schemas/User"

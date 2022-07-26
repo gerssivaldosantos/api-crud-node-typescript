@@ -2,7 +2,7 @@ import {v4 as uuid} from 'uuid';
 import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryColumn, BeforeInsert, BeforeUpdate, JoinColumn, OneToOne} from "typeorm"
 
 /* TODO: implement class-validator */
-@Entity('users')
+@Entity('user')
 export class User {
     @PrimaryColumn()
     public readonly id?: string;
