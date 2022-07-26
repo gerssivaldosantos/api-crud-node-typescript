@@ -23,8 +23,9 @@ export class createProfile1658792204279 implements MigrationInterface {
                         isNullable: false,
                     },
                     {
-                        name: 'description',
-                        type: 'varchar',
+                        name: 'validated',
+                        type: 'boolean',
+                        isNullable: false,
                     },
                     {
                         name: 'created_at',
