@@ -1,4 +1,4 @@
-import { TypeormUserRepository } from "../../repositories/implementations/typeorm/TypeormUserRepository";
+import { TypeormUserRepository } from "../../repositories/implementations/typeorm/profile.repository";
 
 const userRepository = new TypeormUserRepository()
 

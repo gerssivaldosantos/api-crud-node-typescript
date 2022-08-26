@@ -1,7 +1,7 @@
-import { CheckTokenMiddlewareInteraface } from "../checkTokenMiddlewareInterface";
+import { CheckTokenMiddlewareInteraface } from "../check-token-middleware.interface";
 import { NextFunction, Request, Response } from "express"
 import jwt from "jsonwebtoken";
-import { TokenPayload } from "../../generic/dtos/TokenPayload";
+import { TokenPayload } from "../../generic/dtos/token-payload.dto";
 
 export class JwtTokenMiddleware implements CheckTokenMiddlewareInteraface {
 

@@ -1,6 +1,6 @@
 import { CreateUserUseCase } from "./create-user.service";
 import { Request, Response } from "express";
-import { User } from "../../../entities/User";
+import { User } from "../../../entities/user.entity";
 export class CreateUserController {
     constructor(
         private createUserUseCase: CreateUserUseCase

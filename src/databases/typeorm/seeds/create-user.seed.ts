@@ -1,5 +1,5 @@
 import { Factory, Seeder } from 'typeorm-seeding'
-import { User } from '../../../entities/User'
+import { User } from '../../../entities/user.entity'
 import { DataSource } from 'typeorm'
 import { faker } from '@faker-js/faker'
 

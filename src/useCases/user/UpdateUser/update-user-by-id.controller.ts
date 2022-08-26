@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { User } from "../../../entities/User";
+import { User } from "../../../entities/user.entity";
 import { UpdateUserUseCase } from "./upate-user-by-id.service";
 
 export class UpdateUserController {

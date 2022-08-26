@@ -1,4 +1,4 @@
-import { UserRepositoryInterface } from "../../../repositories/UserRepositoryInterface";
+import { UserRepositoryInterface } from "../../../repositories/user-repository.interface";
 
 export class DeleteUserUseCase {
     constructor(

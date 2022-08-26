@@ -1,5 +1,5 @@
-import { GetUserDTO } from "../../../generic/dtos/GetUserDTO";
-import { UserRepositoryInterface } from "../../../repositories/UserRepositoryInterface";
+import { GetUserDTO } from "../../../generic/dtos/get-user.dto";
+import { UserRepositoryInterface } from "../../../repositories/user-repository.interface";
 
 
 export class GetUserByEmailUseCase {

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Profile } from "../../../entities/Profile";
+import { Profile } from "../../../entities/profile.entity";
 import { CreateProfileService } from "./create-profile.service";
 
 export class CreateProfileController {

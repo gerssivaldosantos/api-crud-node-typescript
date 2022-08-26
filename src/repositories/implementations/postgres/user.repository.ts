@@ -1,5 +1,5 @@
-import { User } from "../../../entities/User";
-import { UserRepositoryInterface } from "../../UserRepositoryInterface";
+import { User } from "../../../entities/user.entity";
+import { UserRepositoryInterface } from "../../user-repository.interface";
 import pg from 'pg'
 import { connect } from "../../../databases/postgres/connect";
 

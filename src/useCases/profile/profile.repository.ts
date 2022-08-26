@@ -1,3 +1,3 @@
-import { TypeormProfileRepository } from "../../repositories/implementations/typeorm/TypeormProfileRepository";
+import { TypeormProfileRepository } from "../../repositories/implementations/typeorm/";
 
 export const profileRepository = new TypeormProfileRepository();

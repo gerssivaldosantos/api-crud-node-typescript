@@ -1,4 +1,4 @@
-import { TokenProviderInterface } from "../TokenProviderInterface";
+import { TokenProviderInterface } from "../token-provider.interface";
 import jwt from "jsonwebtoken";
 
 export class JwtTokenProvider implements TokenProviderInterface {

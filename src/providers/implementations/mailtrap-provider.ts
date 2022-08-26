@@ -1,4 +1,4 @@
-import { MailProviderInterface, MessageInterface } from "../MailProviderInterface";
+import { MailProviderInterface, MessageInterface } from "../mail-provider.interface";
 import nodemailer from 'nodemailer'
 import { SentMessageInfo } from "nodemailer/lib/smtp-transport";
 

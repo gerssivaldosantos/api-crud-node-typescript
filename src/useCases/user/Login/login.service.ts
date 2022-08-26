@@ -1,7 +1,7 @@
 import { LoginDTO } from "./login.dto";
 import bcrypt from 'bcryptjs'
-import { TokenProviderInterface } from "../../../providers/TokenProviderInterface";
-import { UserRepositoryInterface } from "../../../repositories/UserRepositoryInterface";
+import { TokenProviderInterface } from "../../../providers/token-provider.interface";
+import { UserRepositoryInterface } from "../../../repositories/user-repository.interface";
 
 export class LoginUseCase {
 

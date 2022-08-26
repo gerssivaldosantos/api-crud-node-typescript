@@ -1,4 +1,4 @@
-import { MailtrapMailProvider } from "../../../providers/implementations/MailtrapMailProvider";
+import { MailtrapMailProvider } from "../../../providers/implementations/mailtrap-provider";
 import { userRepository } from "../user.repository";
 import { CreateUserController } from "./create-user.controller";
 import { CreateUserUseCase } from "./create-user.service";
