@@ -1,4 +1,7 @@
+import { DataSourceOptions } from "typeorm";
+
 export default {
+    type: "postgres",
     host: "localhost",
     port: 3306,
     username: "test",
@@ -23,4 +26,4 @@ export default {
         migrationsDir: "migration",
         subscribersDir: "subscriber"
     }
-}
+} as DataSourceOptions
