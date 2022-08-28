@@ -15,7 +15,7 @@ class MyApp {
         this.app.use(express.json());
         this.app.use(cors());
         this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
-        this.app.use(router)
+        this.app.use('/api/v1/', router)
     }
 }
 
