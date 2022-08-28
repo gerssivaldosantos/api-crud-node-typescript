@@ -1,0 +1,31 @@
+version: '3.6'
+services:
+  api:
+    build: .
+    command: yarn dev
+    volumes:
+        - .:/usr/app/
+        - /usr/app/node_modules
+    environment:
+        NODE_ENV: "development"
+        DB_HOST: postgres
+        DB_PORT: 5432
+        DB_USER: mydb
+        DB_PASSWORD: andows
+        DB_NAME: api
+        PORT: 3000
+        LOGGER_LEVEL: debug
+    ports:
+        - "3000:3000"
+    depends_on:
+        - postgres
+        
+  postgres:
+    restart: always
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: mydb
+      POSTGRES_PASSWORD: andows
+      POSTGRES_DB: api
