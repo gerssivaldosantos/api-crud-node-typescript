@@ -2,11 +2,11 @@ import { DataSourceOptions } from "typeorm";
 
 export default {
     type: "postgres",
-    host: "localhost",
+    host: "postgres",
     port: 5432,
-    username: "postgres",
+    username: "mydb",
     password: "andows",
-    database: "api-crud",
+    database: "api",
     logging: true,
     synchronize: true,
     entities: [

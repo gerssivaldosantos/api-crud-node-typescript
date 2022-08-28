@@ -18,10 +18,9 @@ services:
     ports:
         - "3000:3000"
     depends_on:
-        - postgres_api_container
+        - postgres
         
   postgres:
-    container_name: postgres_api_container
     restart: always
     image: postgres
     ports:
