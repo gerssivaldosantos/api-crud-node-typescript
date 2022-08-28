@@ -1,5 +1,5 @@
 import "reflect-metadata"
-import { DataSource, DataSourceOptions } from "typeorm"
+import { DataSource } from "typeorm"
 
 import ormConfig from "./ormconfig"
 
