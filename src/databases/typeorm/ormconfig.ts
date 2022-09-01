@@ -2,28 +2,28 @@ import { DataSourceOptions } from "typeorm";
 
 export default {
     type: "postgres",
-    host: "localhost",
-    port: 3306,
-    username: "test",
-    password: "test",
-    database: "test",
+    host: "postgres",
+    port: 5432,
+    username: "mydb",
+    password: "andows",
+    database: "api",
     logging: true,
     synchronize: true,
     entities: [
-        "entity/*.js"
+        "src/entities/*.ts"
     ],
     subscribers: [
-        "subscriber/*.js"
+        "src/subscribers/*.ts"
     ],
     entitySchemas: [
-        "schema/*.json"
+        "src/schemas/*.json"
     ],
     migrations: [
-        "migration/*.js"
+        "src/databases/typeorm/migrations/*.ts"
     ],
     cli: {
-        entitiesDir: "entity",
-        migrationsDir: "migration",
-        subscribersDir: "subscriber"
+        entitiesDir: "src/entities",
+        migrationsDir: "src/databases/typeorm/migrations",
+        subscribersDir: "src/subscribers"
     }
 } as DataSourceOptions
