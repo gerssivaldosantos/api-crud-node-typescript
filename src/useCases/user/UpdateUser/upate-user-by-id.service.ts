@@ -1,5 +1,5 @@
-import { User } from "../../../entities/user.entity"
-import { UserRepositoryInterface } from "../../../repositories/user-repository.interface"
+import { User } from "@/entities/user.entity"
+import { UserRepositoryInterface } from "@/repositories/user-repository.interface"
 
 
 export class UpdateUserUseCase {

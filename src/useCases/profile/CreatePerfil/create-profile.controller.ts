@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Profile } from "../../../entities/profile.entity";
+import { Profile } from "@/entities/profile.entity";
 import { CreateProfileService } from "./create-profile.service";
 
 export class CreateProfileController {
@@ -11,7 +11,7 @@ export class CreateProfileController {
         try {
             await this.createProfileService.execute(request.body as Profile)
             return response.status(201).json({ message: "Profile Created" })
-        } catch (error) {
+        } catch (error:any) {
             return response.status(400).json({
                 error: error.message || 'Unexpected error'
             })

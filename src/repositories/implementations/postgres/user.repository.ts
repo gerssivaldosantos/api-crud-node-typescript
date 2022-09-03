@@ -1,7 +1,7 @@
-import { User } from "../../../entities/user.entity";
-import { UserRepositoryInterface } from "../../user-repository.interface";
+import { User } from "@/entities/user.entity";
+import { UserRepositoryInterface } from "@/repositories/user-repository.interface";
 import pg from 'pg'
-import { connect } from "../../../databases/postgres/connect";
+import { connect } from "@/databases/postgres/connect";
 
 class PostgresUserRepository implements UserRepositoryInterface {
     constructor(private client?: pg.PoolClient) {
