@@ -2,7 +2,7 @@ import { DataSourceOptions } from "typeorm";
 
 export default {
     type: "postgres",
-    host: "postgres",
+    host: "localhost",
     port: 5432,
     username: "mydb",
     password: "andows",

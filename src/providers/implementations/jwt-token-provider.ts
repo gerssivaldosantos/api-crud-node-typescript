@@ -7,4 +7,8 @@ export class JwtTokenProvider implements TokenProviderInterface {
     public async create(id: string): Promise<string> {
         return jwt.sign({ id: id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
     }
+
+    check(token: string): Promise<undefined> {
+        return Promise.resolve();
+    }
 }
