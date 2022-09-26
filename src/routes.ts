@@ -6,6 +6,7 @@ import { getUserController } from "./useCases/user/GetUser/get-user.module"
 import { getUserByEmailController } from "./useCases/user/GetUserByEmail/get-user-by-email.module"
 import { getUserByIdController } from "./useCases/user/GetUserById/get-user-by-id.module"
 import { updateUserController } from "./useCases/user/UpdateUser/update-user-by-id.module"
+import {checkTokenController} from "./useCases/user/CheckToken/check-token.module";
 
 const router = Router()
 
@@ -39,6 +40,10 @@ router.delete('/user/:id', (request, response) => {
 
 router.post('/user/auth', (request, response)=> {
     return loginController.handle(request, response)
+})
+
+router.post('/check-token', (request, response)=> {
+    return checkTokenController.handle(request, response)
 })
 
 export { router }

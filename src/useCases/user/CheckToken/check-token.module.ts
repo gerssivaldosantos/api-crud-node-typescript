@@ -1,5 +1,7 @@
-import { JwtTokenMiddleware } from "../../../middlewares/implementations/jwt-token-middleware";
+import {CheckTokenService} from "./check-token.service";
+import {CheckTokenController} from "./check-token.controller";
 
-const checkTokenMiddleware = new JwtTokenMiddleware(process.env.JWT_SECRET_KEY)
+const useCase = new CheckTokenService()
+const checkTokenController = new CheckTokenController(useCase)
 
-export { checkTokenMiddleware } 
+export { checkTokenController }
