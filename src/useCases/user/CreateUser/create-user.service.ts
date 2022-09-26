@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs'
-import { User } from '../../../entities/user.entity'
-import { MailProviderInterface } from '../../../providers/mail-provider.interface'
-import { UserRepositoryInterface } from '../../../repositories/user-repository.interface'
+import { User } from '@/entities/user.entity'
+import { MailProviderInterface } from '@/providers/mail-provider.interface'
+import { UserRepositoryInterface } from '@/repositories/user-repository.interface'
 
 export class CreateUserUseCase {
     constructor(

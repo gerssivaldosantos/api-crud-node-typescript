@@ -1,7 +1,7 @@
 import { faker } from "@faker-js/faker";
 import request from 'supertest'
-import app from "../../../app";
-import { AppDataSource } from "../../../databases/typeorm/data-source";
+import app from "@/app";
+import { AppDataSource } from "@/databases/typeorm/data-source";
 
 beforeAll(async () => {
     await AppDataSource.initialize();

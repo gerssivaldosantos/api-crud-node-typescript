@@ -1,7 +1,7 @@
 import { Repository } from "typeorm";
-import { AppDataSource } from "../../../databases/typeorm/data-source";
-import { Profile } from "../../../entities/profile.entity";
-import { ProfileRepositoryInterface } from "../../profile-repository.interface";
+import { AppDataSource } from "@/databases/typeorm/data-source";
+import { Profile } from "@/entities/profile.entity";
+import { ProfileRepositoryInterface } from "@/repositories/profile-repository.interface";
 
 export class TypeormProfileRepository implements ProfileRepositoryInterface {
     constructor (private readonly profileRepository?: Repository<Profile>){
