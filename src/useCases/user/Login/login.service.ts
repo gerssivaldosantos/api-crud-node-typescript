@@ -12,15 +12,14 @@ export class LoginUseCase {
     ) { }
 
     public async execute(login: LoginDTO) {
-        try {
             const userSearched:User | undefined = await this.UserRepository.customFindByEmail(login.email)
             if (userSearched instanceof User) {
                 const passwordValid = await bcrypt.compare(login.password, userSearched.password)
                 if (!passwordValid) {
-                    new Error('Invalid credentials')
+                    throw new Error('Invalid credentials')
                 }
             }
-            if (!userSearched?.id) new Error('User Not Found')
+            if (!userSearched?.id) throw new Error('User Not Found')
             else {
                 const token = await this.TokenProvider.create(userSearched.id)
                 return {
@@ -28,8 +27,5 @@ export class LoginUseCase {
                     user: {...userSearched, password: null}
                 }
             }
-        } catch (error) {
-            throw new Error(error.message || 'Unexpected Error')
-        }
     }
 }
